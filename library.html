@@ -29,7 +29,7 @@
             <img src="Carrion.jfif" alt="Carrion">
             <h3>Carrion</h3>
             <a href="parsec://">             
-            <button class="play-btn">Play Now</button></a>
+            <button onclick="openParsecApp()" class="play-btn">Play Now</button></a>
         </div>
         <div class="game-card">
             <img src="inside.jfif" alt="Inside">
@@ -44,10 +44,28 @@
         <h3>PLEASE WAIT FOR YOUR REQUEST TO BE ACCEPT BY ADMIN</h3>
     
     <script>
-        function launchParsec(username) {
-            alert(`Connect to Parsec with username: ${username}\nPassword: player123`);
-            // In a real system, this would auto-launch Parsec with credentials
+  function openParsecApp() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const now = Date.now();
+
+    // Try to open Parsec app
+    window.location.href = "parsec://";
+
+    // If app not installed, redirect to App Store / Play Store after 1.5s
+    setTimeout(() => {
+      const elapsed = Date.now() - now;
+      if (elapsed < 2000) {
+        if (/android/i.test(userAgent)) {
+          window.location.href = "https://play.google.com/store/apps/details?id=tv.parsec.client";
+        } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+          window.location.href = "https://apps.apple.com/us/app/parsec/id1228286145";
+        } else {
+          // Optional: fallback for other platforms
+          window.location.href = "https://parsec.app/downloads";
         }
-    </script>
+      }
+    }, 1500);
+  }
+</script>
 </body>
 </html>
