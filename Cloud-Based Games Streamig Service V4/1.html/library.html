@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HABQ Gaming - Cloud-based game streaming service">
+    <title>HAB | Play Anywhere Anytime</title>
+    <link rel="stylesheet" href="../2.css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="logo">
+                <a href="../4.php/index.php" aria-label="HAB Gaming Home">
+                    <img src="../0.images/HAB logo.jpg" alt="HAB Logo" class="logo-icon">
+                    <span>HABQ GAMING</span>
+                </a>
+            </div>
+        </header>
+    <h1>Cloud Gaming Hub</h1>
+    <p>Stream and play games from the cloud!</p>
+
+    <div class="game-list">
+        <div class="game-card">
+            <img src="../0.images/Carrion.jfif" alt="Carrion">
+            <h3>Carrion</h3>
+            <a href="parsec://" onclick="setTimeout(() => { window.location.href = 'https://parsec.app/downloads'; }, 1000);">              
+            <button class="play-btn">Play Now</button>
+        </div>
+        <div class="game-card">
+            <img src="../0.images/cs (1).jpg" alt="Counter-Strike">
+            <h3>Counter-Strike</h3>
+            <button onclick="window.location.href='parsec://Rizz1233#16591604'">Join Game</button>              
+                <button class="play-btn">Play Now</button>
+        </div>
+    </div>
+
+    <script>
+        function launchParsec(username) {
+            alert(`Connect to Parsec with username: ${username}\nPassword: player123`);
+            // In a real system, this would auto-launch Parsec with credentials
+        }
+    </script>
+</body>
+</html>
